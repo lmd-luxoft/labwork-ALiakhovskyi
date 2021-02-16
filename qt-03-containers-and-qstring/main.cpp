@@ -33,8 +33,7 @@ int main(int argc, char *argv[])
     }
 
  qDebug()<<"Shortest name"<<shortestName;
-
-
+ qDebug() << shortestName.prepend("Shortest name: ");
 
 
 
