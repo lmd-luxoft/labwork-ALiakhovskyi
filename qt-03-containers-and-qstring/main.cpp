@@ -8,9 +8,10 @@ int main(int argc, char *argv[])
 
     QList<QString> names;
     names << "Mary" << "Ann" << "Charlynn" << "Marylynn" << "Margaret"
-          << "Kate" << "Rose" << "Gwendolyn";
+          << "Kate" << "Rose" << "GwendolynSailor"<<"O";
     QListIterator<QString> javaIterator(names);
     QString longestName;
+    QString shortestName = names.at(0);
     while(javaIterator.hasNext()) {
         QString currentName = javaIterator.next();
          if(longestName.length()<currentName.length())
@@ -19,6 +20,26 @@ int main(int argc, char *argv[])
          }
     }
     QString output("Longest name: %1");
+
+
+    for (QList<QString>::iterator i = names.begin();i != names.end(); ++i)
+    {
+        if(shortestName.length()>(*i).length())
+        {
+            shortestName = *i;
+        }
+
+
+    }
+
+ qDebug()<<"Shortest name"<<shortestName;
+
+
+
+
+
+
+
     qDebug() << output.arg(longestName);
 
     return a.exec();
